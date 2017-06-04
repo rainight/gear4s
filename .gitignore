@@ -1,2 +1,28 @@
+# Java
+
+target/
+
 *.class
-*.log
+*.jar
+*.war
+*.ear
+
+
+# IntelliJ
+
+.idea/
+
+*.iml
+
+
+# Scala
+
+project/project/
+project/target/
+
+
+# RTS
+
+rts-deploy/
+
+*.db
