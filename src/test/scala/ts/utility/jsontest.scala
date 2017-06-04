@@ -1,4 +1,4 @@
-package ts.utility
+package sl.utility
 
 import org.json4s.JsonAST.JObject
 import org.scalatest.{FunSuite, Matchers}

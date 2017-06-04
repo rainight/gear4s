@@ -1,4 +1,4 @@
-package ts.converter
+package sl.converter
 
 object textUtils {
   //split to small part, \x00abc => 00abc

@@ -1,6 +1,6 @@
-package ts.utility
+package sl.utility
 
-import ts.converter._
+import sl.converter._
 import org.scalatest.{FunSuite, Matchers}
 
 class fileoperatortest extends FunSuite with Matchers {

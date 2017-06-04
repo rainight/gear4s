@@ -1,4 +1,4 @@
-package ts.converter
+package sl.converter
 
 import org.scalatest.{BeforeAndAfter, FunSuite, Matchers}
 

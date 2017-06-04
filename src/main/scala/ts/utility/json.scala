@@ -1,4 +1,4 @@
-package ts.utility
+package sl.utility
 
 import org.json4s._
 import org.json4s.jackson.Json
