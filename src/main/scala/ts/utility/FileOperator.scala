@@ -3,7 +3,7 @@ package ts.utility
 import java.io.{BufferedOutputStream, File, FileOutputStream, PrintWriter}
 
 import scala.io.Source
-import java.nio.file.{Files, Path, Paths}
+import java.nio.file.{Files, Paths}
 
 object FileOperator {
   def File2String(pathStr: String): String = {

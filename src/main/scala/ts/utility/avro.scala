@@ -6,6 +6,9 @@ import org.apache.avro.Schema
 import org.apache.avro.generic.{GenericData, GenericDatumReader, GenericDatumWriter, GenericRecord}
 import org.apache.avro.io._
 
+
+// TODO: avro file encode/decode example: http://www.programcreek.com/java-api-examples/index.php?api=org.apache.avro.io.JsonEncoder
+
 object avro {
   def Json2Schema(json: String): Schema = {
     new Schema.Parser().parse(json)
