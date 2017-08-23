@@ -1,4 +1,4 @@
-package sl.debug
+package sl
 
 import java.util.Calendar
 
@@ -81,10 +81,10 @@ object hh {
 
     val hconf = HBaseConfiguration.create()
 
-    hconf.set("hbase.zookeeper.quorum", "localhost")
+    hconf.set("hbase.zookeeper.quorum", "adccdha,adccdhb,adccdhc")
     hconf.set("hbase.zookeeper.property.clientPort", "2181")
 
-    val tb = hh.getTable(hconf, "autocreate1", ps)
+    val tb = hh.getTable(hconf, "shawn:testing", ps)
     tb.setAutoFlushTo(false)
 
     val ret = p.map { case (key, f, qual, v) =>
@@ -96,9 +96,9 @@ object hh {
       s"${t.getTimeInMillis.toString}|$ps table ${tb.t} put $key $f $qual $v with \n $error <<"
     }
 
-      tb.flushCommits()
-      sf(s"${Calendar.getInstance().getTimeInMillis.toString} task $ps: flush ${tb.t} with size ${ret.mkString(",")}\n ")
-      hh.retTable("autocreate1", tb, ps)
+    tb.flushCommits()
+    sf(s"${Calendar.getInstance().getTimeInMillis.toString} task $ps: flush ${tb.t}\n ")
+    hh.retTable("autocreate1", tb, ps)
 
     ret
   }
@@ -119,9 +119,9 @@ class hbaseflushissue extends FunSuite with Matchers with SharedSparkContext {
     r.foreach(println)
   }*/
 
-   test("input hbase with HTable") {
-      val rdd = sc.parallelize(operationlist).repartition(100)
-      rdd.mapPartitions { case p => hh.hput(p) }.collect().foreach(x => println(x + "\n------------------------------------------------------\n"))
+  test("input hbase with HTable") {
+     val rdd = sc.parallelize(operationlist).repartition(100)
+     rdd.mapPartitions { case p => hh.hput(p) }.collect().foreach(x => println(x + "\n------------------------------------------------------\n"))
 
      println(hh.error)
   }

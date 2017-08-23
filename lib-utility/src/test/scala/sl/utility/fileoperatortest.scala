@@ -4,7 +4,7 @@ import sl.converter._
 import org.scalatest.{FunSuite, Matchers}
 
 class fileoperatortest extends FunSuite with Matchers {
-  val fp = "src/test/resources"
+  val fp = "doc"
 
   test("file operation") {
     val fn = s"$fp/testfile"

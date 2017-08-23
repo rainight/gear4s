@@ -1,4 +1,4 @@
-package ts.utility
+package sl
 
 import java.io.Closeable
 import java.io.IOException
@@ -32,6 +32,8 @@ class HBaseHelper(configuration: Configuration) extends Closeable {
   override def close(): Unit = {
     connection.close()
   }
+
+  def getTable(tableName: TableName): Table = connection.getTable(tableName)
 
   def getConnection: Connection = connection
 
