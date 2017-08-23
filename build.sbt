@@ -24,3 +24,5 @@ lazy val eg_antlr4 = (project in file("eg-antlr4")).settings(commonSettings: _*)
 lazy val lib_spark = (project in file("lib-spark")).settings(commonSettings: _*) dependsOn (lib_hbase)
 
 lazy val eg_cdf = (project in file("eg-cdf")).settings(commonSettings: _*) dependsOn (lib_hbase)
+
+lazy val lib_kafka = (project in file("lib-kafka")).settings(commonSettings: _*)
